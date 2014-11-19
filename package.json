@@ -1,0 +1,27 @@
+{
+  "name": "asll",
+  "version": "1.0.0",
+  "description": "In computer science, a LL parser is a top-down parser for a subset of context-free languages",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonussi/asll.git"
+  },
+  "keywords": [
+    "ll-parser"
+  ],
+  "author": [ "Lucas Tonussi", "Douglas Klein"
+  ],
+  "license": [ "MIT", "UFSC"
+  ],
+  "bugs": {
+    "url": "https://github.com/tonussi/asll/issues"
+  },
+  "homepage": "https://github.com/tonussi/asll"
+}

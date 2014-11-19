@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="253px"
+     height="212px"
+     version="1.1">
+
+  <defs/>
+
+  <g transform="translate(0.5,0.5)">
+
+    <ellipse cx="93"
+             cy="98"
+             rx="10"
+             ry="10"
+             fill="#0d0d0d"
+             stroke="#000000"
+             transform="rotate(15,93,98)"
+             pointer-events="none" />
+
+    <ellipse cx="13"
+             cy="158"
+             rx="10"
+             ry="10"
+             fill="#0d0d0d"
+             stroke="#000000"
+             transform="rotate(15,13,158)"
+             pointer-events="none" />
+
+    <path d="M 84 103 L 21 152"
+          fill="none"
+          stroke="#000000"
+          stroke-miterlimit="10"
+          pointer-events="none" />
+
+    <ellipse cx="103"
+             cy="198"
+             rx="10"
+             ry="10"
+             fill="#0d0d0d"
+             stroke="#000000"
+             transform="rotate(15,103,198)"
+             pointer-events="none" />
+
+    <path d="M 18 167 L 94 194"
+          fill="none"
+          stroke="#000000"
+          stroke-miterlimit="10"
+          pointer-events="none" />
+
+    <path d="M 112 193 L 112 193"
+          fill="none"
+          stroke="#000000"
+          stroke-miterlimit="10"
+          pointer-events="none" />
+
+    <path d="M 112 193 L 112 193 L 112 193 L 112 193 Z"
+          fill="#000000"
+          stroke="#000000"
+          stroke-miterlimit="10"
+          pointer-events="none" />
+
+    <path d="M 106 188 L 98 107"
+          fill="none"
+          stroke="#000000"
+          stroke-miterlimit="10"
+          pointer-events="none" />
+
+    <ellipse cx="226"
+             cy="26"
+             rx="20"
+             ry="20"
+             fill="#0d0d0d"
+             stroke="#000000"
+             transform="rotate(15,226,26)"
+             pointer-events="none" />
+
+    <path d="M 102 93 L 208 36"
+          fill="none"
+          stroke="#000000"
+          stroke-miterlimit="10"
+          pointer-events="none" />
+
+  </g>
+
+</svg>
