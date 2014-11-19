@@ -2,7 +2,7 @@ Windows        | Mac/Linux
 -------------- | ------------
 Nothing yet... | Nothing yet...
 
-![Graph](logo.svg)
+![Graph](./logo.svg)
 
 # First
 
