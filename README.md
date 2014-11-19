@@ -1,3 +1,9 @@
+Windows        | Mac/Linux
+-------------- | ------------
+Nothing yet... | Nothing yet...
+
+![Graph](logo.svg)
+
 # Asll
 
 Analisador sintático LL: Um analisador sintático LL é um algoritmo de análise
