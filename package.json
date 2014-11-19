@@ -1,7 +1,7 @@
 {
-  "name": "asll",
+  "name": "agff",
   "version": "1.0.0",
-  "description": "In computer science, a LL parser is a top-down parser for a subset of context-free languages",
+  "description": "Analisador de gramáticas livre de contexto usando algoritmos first e follow.",
   "main": "app.js",
   "directories": {
     "test": "test"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tonussi/asll.git"
+    "url": "https://github.com/tonussi/agff.git"
   },
   "keywords": [
     "ll-parser"
@@ -21,7 +21,7 @@
   "license": [ "MIT", "UFSC"
   ],
   "bugs": {
-    "url": "https://github.com/tonussi/asll/issues"
+    "url": "https://github.com/tonussi/agff/issues"
   },
-  "homepage": "https://github.com/tonussi/asll"
+  "homepage": "https://github.com/tonussi/agff"
 }
