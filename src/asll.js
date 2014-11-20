@@ -1,20 +1,12 @@
-var Asll = function (gramatica) {};
-
-ASll.prototype = function (gramatica) {
-
-  var map = Array.prototype.map;
-
-  a: {
-    return map.call('Hello World', function(x) { return x.charCodeAt(0); });
-  }
-
-};
+var ll = require(../src/ll.js);
+var glc = require(../src/glc.js);
+var asll = require(../src/asll.js);
+var first = require(../src/first.js);
+var follow = require(../src/follow.js);
 
 
-
-if (require.main === module) {
-  var asll = new Asll();
-
-  console.log(asll);
-  console.log(a);
-}
+/**
+ * TODO
+ *
+ * Main facade
+ */
