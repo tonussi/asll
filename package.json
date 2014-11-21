@@ -16,12 +16,19 @@
   "keywords": [
     "ll-parser"
   ],
-  "author": [ "Lucas Tonussi", "Douglas Klein"
+  "author": [
+    "Lucas Tonussi",
+    "Douglas Klein"
   ],
-  "license": [ "MIT", "UFSC"
+  "license": [
+    "MIT",
+    "UFSC"
   ],
   "bugs": {
     "url": "https://github.com/tonussi/agff/issues"
   },
-  "homepage": "https://github.com/tonussi/agff"
+  "homepage": "https://github.com/tonussi/agff",
+  "dependencies": {
+    "assert": "^1.1.2"
+  }
 }
