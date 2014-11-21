@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Analisador de gramáticas livre de contexto usando algoritmos first e follow.",
   "main": "app.js",
+  "engines": {
+    "node": "0.10.33"
+  },
   "directories": {
     "test": "test"
   },
@@ -14,7 +17,11 @@
     "url": "https://github.com/tonussi/agff.git"
   },
   "keywords": [
-    "ll-parser"
+    "ll-parser",
+    "parser",
+    "first",
+    "follow",
+    "glc-parser"
   ],
   "author": [
     "Lucas Tonussi",
