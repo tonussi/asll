@@ -1,11 +1,11 @@
 /**
- * HashTable Class
- */
+* HashTable Class
+*/
 
 function HashTable(objeto) {
 
-  var items = {};
-  var tamanho = 0;
+  this.tamanho = 0;
+  this.items = {};
 
   for (var propriedade in objeto) {
     if (objeto.hasOwnProperty(propriedade)) {
@@ -13,34 +13,84 @@ function HashTable(objeto) {
       this.tamanho++;
     }
   }
-
   console.log(objeto);
-
 }
 
 HashTable.prototype = {
 
-  setItem = function (chave, argumento) {
+  setItem : function (chave, valor) {
+
     var antecedente = undefined;
+
     if (this.hasItem(chave)) {
       antecedente = this.items[chave];
     } else {
-      this.length++;
+      this.tamanho++;
     }
     this.items[chave] = valor;
+
     return antecedente;
+
   },
 
-  getItem = function (chave) {
+  getItem : function (chave) {
     return this.hasItem(chave) ? this.items[chave] : undefined;
+  },
+
+  hasItem : function(chave) {
+    return this.items.hasOwnProperty(chave);
+  },
+
+  removeItem : function(chave) {
+    if (this.hasItem(chave)) {
+      antecedente = this.items[chave];
+      this.tamanho--;
+      delete this.items[chave];
+      return antecedente;
+    }
+    else {
+      return undefined;
+    }
+  },
+
+  chaves : function() {
+    var chaves = [];
+    for (var k in this.items) {
+      if (this.hasItem(k)) {
+        chaves.push(k);
+      }
+    }
+    return chaves;
+  },
+
+  valores : function() {
+    var valores = [];
+    for (var k in this.items) {
+      if (this.hasItem(k)) {
+        valores.push(this.items[k]);
+      }
+    }
+    return valores;
+  },
+
+  each : function(fn) {
+    for (var k in this.items) {
+      if (this.hasItem(k)) {
+        fn(k, this.items[k]);
+      }
+    }
+  },
+
+  clear : function() {
+    this.items = {}
+    this.tamanho = 0;
   }
 
 };
 
 exports.HashTable = HashTable;
 
-if (require.main == module) {
-  var ht = new HashTable({t: 't', s: 's', k: 'k'});
-  console.log(ht);
-  console.log(ht.list());
+if (require.main === module) {
+  var hash = new HashTable({'S':'bA | bBB | DF', 'S':'bA | bBB | DF'});
+  console.log(hash);
 }
