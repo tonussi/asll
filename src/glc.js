@@ -4,33 +4,33 @@
  * GLC algorithm
  */
 
-var GLC = function (gramatica) {
+var GLC = function () {
 
   var map = Array.prototype.map;
 
-};
+}
 
-GLC.prototype = function (gramatica) {
+GLC.prototype = {
 
-  adiciona: {
+  adiciona : function(chave, valor) {
 
     return 1;
 
   },
 
-  remove : {
+  remove : function(chave, valor) {
 
     return null;
 
   },
 
-  busca : {
+  busca : function(chave, valor) {
 
     return 0;
 
   },
 
-  mostra : {
+  mostra : function(chave, valor) {
 
     return '';
 
@@ -44,8 +44,10 @@ exports.GLC = GLC;
 if (require.main === module) {
   var glc = require('./glc.js');
   var gramatica = new glc.GLC();
-  glc.adiciona('S', 'aDa|bDF|cC|F');
-  glc.adiciona('D', 'aaca|dD|cC');
-  glc.adiciona('F', 'adac|F|cC');
+
+  gramatica.adiciona('S', 'aDa|bDF|cC|F');
+  gramatica.adiciona('D', 'aaca|dD|cC');
+  gramatica.adiciona('F', 'adac|F|cC');
+
   console.log(gramatica);
 }
