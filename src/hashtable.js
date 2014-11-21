@@ -4,12 +4,12 @@
 
 function HashTable(objeto) {
 
-  var colecao = {};
+  var items = {};
   var tamanho = 0;
 
   for (var propriedade in objeto) {
     if (objeto.hasOwnProperty(propriedade)) {
-      this.colecao[propriedade] = objeto[propriedade];
+      this.items[propriedade] = objeto[propriedade];
       this.tamanho++;
     }
   }
@@ -19,6 +19,21 @@ function HashTable(objeto) {
 }
 
 HashTable.prototype = {
+
+  setItem = function (chave, argumento) {
+    var antecedente = undefined;
+    if (this.hasItem(chave)) {
+      antecedente = this.items[chave];
+    } else {
+      this.length++;
+    }
+    this.items[chave] = valor;
+    return antecedente;
+  },
+
+  getItem = function (chave) {
+    return this.hasItem(chave) ? this.items[chave] : undefined;
+  }
 
 };
 
