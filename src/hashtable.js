@@ -2,29 +2,30 @@
  * HashTable Class
  */
 
-function HashTable(o) {
-  var len = 0;
-  var items = {};
-}
+function HashTable(objeto) {
 
-HashTable.prototype {
+  var colecao = {};
+  var tamanho = 0;
 
-  this.len = 0;
-  this.items = {};
-
-  list: {
-    for (var p in o) {
-      if (o.hasOwnProperty(p)) {
-        this.items[p] = o[p];
-        this.len++;
-      }
+  for (var propriedade in objeto) {
+    if (objeto.hasOwnProperty(propriedade)) {
+      this.colecao[propriedade] = objeto[propriedade];
+      this.tamanho++;
     }
   }
 
+  console.log(objeto);
+
 }
+
+HashTable.prototype = {
+
+};
 
 exports.HashTable = HashTable;
 
 if (require.main == module) {
-  var ht = new HashTable('a');
+  var ht = new HashTable({t: 't', s: 's', k: 'k'});
+  console.log(ht);
+  console.log(ht.list());
 }
