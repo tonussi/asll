@@ -37,6 +37,7 @@
   "homepage": "https://github.com/tonussi/agff",
   "dependencies": {
     "assert": "^1.1.2",
+    "test": "^0.6.0",
     "underscore": "^1.7.0"
   }
 }
