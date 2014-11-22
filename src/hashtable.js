@@ -1,6 +1,6 @@
 /**
-* HashTable Class
-*/
+ * HashTable Class
+ */
 
 function HashTable(objeto) {
 
@@ -53,35 +53,35 @@ HashTable.prototype = {
     }
   },
 
-  chaves : function() {
-    var chaves = [];
-    for (var k in this.items) {
-      if (this.hasItem(k)) {
-        chaves.push(k);
+  getChaves : function() {
+    var getChaves = [];
+    for (var chave in this.items) {
+      if (this.hasItem(chave)) {
+        getChaves.push(chave);
       }
     }
-    return chaves;
+    return getChaves;
   },
 
-  valores : function() {
-    var valores = [];
-    for (var k in this.items) {
-      if (this.hasItem(k)) {
-        valores.push(this.items[k]);
+  getValores : function() {
+    var getValores = [];
+    for (var chave in this.items) {
+      if (this.hasItem(chave)) {
+        getValores.push(this.items[chave]);
       }
     }
-    return valores;
+    return getValores;
   },
 
-  each : function(fn) {
-    for (var k in this.items) {
-      if (this.hasItem(k)) {
-        fn(k, this.items[k]);
+  getEach : function(fn) {
+    for (var chave in this.items) {
+      if (this.hasItem(chave)) {
+        fn(chave, this.items[chave]);
       }
     }
   },
 
-  clear : function() {
+  clearTable : function() {
     this.items = {}
     this.tamanho = 0;
   }
@@ -91,6 +91,13 @@ HashTable.prototype = {
 exports.HashTable = HashTable;
 
 if (require.main === module) {
-  var hash = new HashTable({'S':'bA | bBB | DF', 'S':'bA | bBB | DF'});
-  console.log(hash);
+
+  var gramatica = new HashTable({A: 'aA', B: 'bB', C: 'cC', D: 'dD'});
+
+  gramatica.getEach(function(chave, valor) {
+
+    console.log('%s => %s', chave, valor);
+
+  });
+
 }
