@@ -1,6 +1,6 @@
-Windows        | Mac/Linux
+Mac/Linux      | Windows
 -------------- | ------------
-[![Build status](https://ci.appveyor.com/api/projects/status/ybjch5b4lbqjt04v?svg=true)](https://ci.appveyor.com/project/tonussi/asll) | [![Build Status](https://travis-ci.org/tonussi/asll.svg?style=flat)](https://travis-ci.org/tonussi/asll)
+[![Build Status](http://img.shields.io/travis/tonussi/asll.svg?style=flat)](https://travis-ci.org/tonussi/asll) | [![Build status](https://ci.appveyor.com/api/projects/status/ybjch5b4lbqjt04v?svg=true)](https://ci.appveyor.com/project/tonussi/asll)
 
 ![Graph](logo.png)
 
