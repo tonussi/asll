@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,url,array}
+\usepackage[portuguese, ruled,lined,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+\SetKwFor{Para}{para}{fa\c{c}a}{fim para} % Corrigindo um bug do algorithm2e, que escreve os nomes de comandos em espanhol
+\SetKwFor{ParaTodo}{para todo}{fa\c{c}a}{fim para todo} % Corrigindo um bug do algorithm2e, que escreve os nomes de comandos em espanhol
+\SetKwBlock{Inicio}{início}{fim} % Corrigindo um bug do algorithm2e, que escreve os nomes de comandos em espanhol
+
+\newtheorem{defin}{Definição}
+\newenvironment{definicao}[1][]
+  {\quote\begin{defin}[#1]}
+  {\end{defin}\endquote}
+
+\title{Algoritmos para o 2º trabalho de Linguagens Formais e Compiladores}
+
+\author{Douglas Klein\inst{1}, Lucas Pagotto Tonussi\inst{1}}
+
+\address{Departamento de Informática e Estatística,\\
+  Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brasil
+  \email{douglas.klein2@gmail.com, lptonussi@gmail.com}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\begin{tabular}{l r}
+Disciplina: & INE5421 - Linguagens Formais e Compiladores\\ Professor: & Olinto
+José Varela Furtado
+\end{tabular}
+\end{center}
+
+\begin{resumo}
+Este documento contém algoritmos desenvolvidos no curso da disciplina de
+Linguagens Formais e Compiladores, voltados a manipulação de Gramáticas Livres
+de Contexto e Autômatos de Pilha, e integrantes do 2º trabalho prático da
+disciplina no semestre 2014.2.
+\end{resumo}
+
+\section{Liguagem de Programação}
+A Linguagem de programação utilizada na implementação dos algoritmos é JavaScript.
+
+\section{Definição da estrutura de dados GLC}
+Uma GLC é uma quádrupla, $G=(V_n, V_t, P, S)$, onde:
+\begin{enumerate}
+	\item $V_n$ é o conjunto de símbolos não-terminais;
+	\item $V_t$ é o conjunto de símbolos terminais;
+	\item $P$ é o conjunto de produções;
+		\begin{itemize}
+			\item Cada produção é uma lista, onde:
+				\begin{enumerate}
+					\item O 1º elemento é uma string que corresponde à cabeça da produção;
+					\item O 2º elemento é uma lista de símbolos ($V_n \cup V_t$) que formam o corpo da produção.
+				\end{enumerate}
+		\end{itemize}
+	\item $S \in V_n$ é o símbolo inicial da gramática.
+\end{enumerate}
+
+
+\section{FIRST}
+O conjunto $FIRST(X) \subseteq V_t$ contém os símbolos terminais que iniciam uma forma sentencial a partir do símbolo $X$.
+
+\begin{algorithm}[H]
+\small
+\Entrada{$G=(V_n, V_t, P, S)$ // Uma Gramátic Livre de Contexto }
+\Saida{$FIRST$ // Um conjunto de conjuntos FIRST de cada símbolo de G}
+\BlankLine
+\Inicio{
+	$FIRST \gets \emptyset$\;
+	\ParaTodo{$t \in V_t$}{
+		$FIRST(t) = \{t\}$\;
+	}
+	\ParaTodo{$X \in V_n$}{
+		$FIRST(X) \gets \{a | X \rightarrow a\alpha \wedge a \in V_t \wedge \alpha \in V_n \cup V_t\} \cup \{\epsilon | X \rightarrow \epsilon \in P\}$\;
+	}
+	$P' \gets \{ X \rightarrow a\alpha | X \rightarrow a\alpha \in P \wedge a \in V_n \wedge \alpha \in V_n \cup V_t\}$\;
+	\Repita{$F \neq FIRST$}{
+		$F \gets FIRST$\;
+		\ParaTodo{$X \rightarrow y_1 y_2 ... y_n \in P'$}{	
+			$i \gets 1$\;
+			\Repita{$i-1=n \vee \epsilon \notin FIRST(y_{i-1})$}{
+				$FIRST(X) \gets FIRST(X) \cup FIRST(y_i)$\;
+				$i \gets i + 1$\;
+			}
+		}
+	}
+  \Retorna{$FIRST$}\;
+}
+\caption{\textbf{obterConjuntosFIRST}}
+\label{alg:obterConjuntosFIRST}
+\end{algorithm}
+
+\end{document}
