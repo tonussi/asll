@@ -1,65 +1,55 @@
 var assert = require('assert');
-var glc = require('../src/glc.js');
 var hashtable = require('../src/hashtable.js');
 
-exports['test original tamanho'] = function testTamanhoOriginal(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  // console.log('original tamanho: ', h.tamanho);
-  assert.equal(h.tamanho, 4, 'tamanho deve ser 4');
-  h = null;
+exports['test tamanho original'] = function testTamanhoOriginal(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  assert.equal(hasht.tamanho, 4, 'tamanho deve ser d');
+  delete hasht;
 }
 
-exports['test value of key one'] = function testValorDaChaveUm(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  // console.log('value of key one: ', h.getItem('one'));
-  assert.equal(h.getItem('one'), 1, 'deve ser igual a one => 1');
-  h = null;
+exports['test valor da chave a'] = function testValorDaChaveUm(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  assert.equal(hasht.getItem('a'), 'a', 'deve ser igual a a => a');
+  delete hasht;
 }
 
-exports['test has key foo?'] = function testTemChaveFoo(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  // console.log('has key foo? ', h.hasItem('foo'));
-  assert.equal(h.hasItem('foo'), false, 'deve retornar false');
-  h = null;
+exports['test se existe a chave foo'] = function testExisteChaveFoo(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  assert.equal(hasht.hasItem('foo'), false, 'deve retornar false');
+  delete hasht;
 }
 
-exports['test previous value of key foo'] = function testValorAnteriorDaChaveFoo(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  // console.log('previous value of key foo: ', h.setItem('foo', 'bar'));
-  h.setItem('foo', 'bar');
-  assert.equal(h.getItem('foo'), 'bar', 'deve ser igual a foo => bar');
-  h = null;
+exports['test valor anterior da chave foo'] = function testValorAnteriorDaChaveFoo(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  assert.equal(hasht.getItem('foo'), undefined, 'deve ser igual a foo => bar');
+  delete hasht;
 }
 
-exports['tamanho after setItem'] = function testTamanhoAfterSetItem(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  // console.log('tamanho after setItem: ', h.tamanho);
-  h.setItem('foo', 'bar');
-  assert.equal(h.tamanho, 5, 'deve ser igual a 5');
-  h = null;
+exports['test tamanho after setItem'] = function testTamanhoAfterSetItem(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  hasht.setItem('foo', 'bar');
+  assert.equal(hasht.tamanho, 5, 'deve ser igual a 5');
+  delete hasht;
 }
 
-exports['value of key four'] = function testValorDaChaveImNo4(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  // console.log('value of key four: ', h.getItem(four));
-  assert.equal(h.getItem(four), 4, 'devera ser igual a four => 4');
-  h = null;
+exports['test valor da chave d'] = function testValorDaChaveD(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  assert.equal(hasht.getItem('d'), 'd', 'devera ser igual a d => d');
+  delete hasht;
 }
 
-exports['value of key foo'] = function testValorDaChaveFoo(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  h.setItem('foo', 'bar');
-  // console.log('value of key foo: ', h.getItem('foo'));
-  assert.equal(h.getItem('foo'), 'bar', 'deve ser foo => bar');
-  h = null;
+exports['test valor da chave foo'] = function testValorDaChaveFoo(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  hasht.setItem('foo', 'bar');
+  assert.equal(hasht.getItem('foo'), 'bar', 'deve ser foo => bar');
+  delete hasht;
 }
 
-exports['tamanho after clear'] = function testTamanhoDepoisDeLimpar(assert) {
-  var h = new hashtable.HashTable({one: 1, two: 2, three: 3, four: 4});
-  h.clear();
-  // console.log('tamanho after clear: ', h.tamanho);
-  assert.equal(h.tamanho, 0, 'deve ser 0');
-  h = null;
+exports['test tamanho after clear'] = function testTamanhoDepoisDeLimpar(assert) {
+  var hasht = new hashtable.HashTable({a: 'a', b: 'b', c: 'c', d: 'd'});
+  hasht.clearTable();
+  assert.equal(hasht.tamanho, 0, 'deve ser 0');
+  delete hasht;
 }
 
 if (module == require.main) require('test').run(exports)
