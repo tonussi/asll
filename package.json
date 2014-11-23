@@ -1,7 +1,7 @@
 {
-  "name": "agff",
+  "name": "asll",
   "version": "1.0.0",
-  "description": "Analisador de gramáticas livre de contexto usando algoritmos first e follow.",
+  "description": "Analisador sintático LL(1)",
   "main": "app.js",
   "engines": {
     "node": "0.10.33"
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tonussi/agff.git"
+    "url": "https://github.com/tonussi/asll.git"
   },
   "keywords": [
     "ll-parser",
@@ -32,9 +32,9 @@
     "UFSC"
   ],
   "bugs": {
-    "url": "https://github.com/tonussi/agff/issues"
+    "url": "https://github.com/tonussi/asll/issues"
   },
-  "homepage": "https://github.com/tonussi/agff",
+  "homepage": "https://github.com/tonussi/asll",
   "dependencies": {
     "assert": "^1.1.2",
     "test": "^0.6.0",
